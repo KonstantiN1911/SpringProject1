@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- Определение бина PrototypeBean -->
+    <bean id="prototypeBean" class="org.example.model.PrototypeBean" scope="prototype"/>
+
+    <!-- Определение бина FirstBean -->
+    <bean id="firstBean" class="org.example.model.FirstBean">
+        <constructor-arg ref="prototypeBean"/>
+    </bean>
+    <bean id="requestScopeBean" class="org.example.model.RequestScopeBean" scope="request"/>
+</beans>
+
